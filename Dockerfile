@@ -8,11 +8,6 @@
 FROM    openjdk:17-ea-slim-buster
 ADD     ./build/libs/jenkins_test-0.0.1-SNAPSHOT.jar /app.jar
 CMD     java -jar /app.jar
-
-EXPOSE  8080
-ARG DEBUG=false
-ENV DEBUG=${DEBUG}
-
 # 8080 포트 열기 (스프링 부트 기본 포트)
 EXPOSE 8080
 
