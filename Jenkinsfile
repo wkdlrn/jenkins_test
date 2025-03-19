@@ -51,7 +51,7 @@ pipeline {
                                         sourceFiles: 'k8s/backend-deployment.yml',
                                         remoteDirectory: '/kjg',
                                         execCommand: '''
-                                            sed -i "s/latest/${BUILD_NUMBER}/g" /home/test/kjg/k8s/backend-deployment.yml
+                                            sed -i "s/latest/$BUILD_ID/g" k8s/backend-deployment.yml
                                         '''
                                     ),
                                     sshTransfer(
