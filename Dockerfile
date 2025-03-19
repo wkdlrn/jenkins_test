@@ -6,7 +6,7 @@
 #ENTRYPOINT ["java", "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005","-jar","/app.jar"]
 #
 FROM    openjdk:17-ea-slim-buster
-ADD     ./build/libs/demo1-0.0.1-SNAPSHOT.jar /app.jar
+ADD     ./build/libs/jenkins_test-0.0.1-SNAPSHOT.jar-0.0.1-SNAPSHOT.jar /app.jar
 CMD     java -jar /app.jar
 
 EXPOSE  8080
