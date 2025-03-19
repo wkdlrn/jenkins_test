@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = 'wkdlrn/backend'
+        IMAGE_NAME = 'wkdlrn/0319back'
         IMAGE_TAG = "${BUILD_NUMBER}"
     }
 
