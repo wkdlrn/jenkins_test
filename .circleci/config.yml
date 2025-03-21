@@ -1,8 +1,9 @@
 # This config was automatically generated from your source code
 # Stacks detected: cicd:jenkins:.,deps:java:.,tool:gradle:
 version: 2.1
-jobs: # 함수같은거 만들었다고 생각
-  test-java:
+
+jobs:
+  gradle-build: # 함수 같은 것 만들었다고 생각
     docker:
       - image: cimg/openjdk:17.0
     working_directory: ~/project
@@ -13,10 +14,10 @@ jobs: # 함수같은거 만들었다고 생각
           command: chmod +x gradlew
       - run:
           name: Gradle Build
-          command: ./gradlew bootjar
+          command: ./gradlew bootJar
       - persist_to_workspace:
-          root:
-          pats:
+          root: .
+          paths:
             - build/libs/*.jar
 workflows: # 함수 실행
   version: 2
