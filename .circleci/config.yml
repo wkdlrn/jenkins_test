@@ -28,9 +28,9 @@ jobs:
           password: $DOCKERHUB_PASSWORD
     working_directory: ~/project
     steps:
+      - checkout
       - attach_workspace:
           at: ~/project
-      - checkout
       - run:
           name: Build Docker image
           command: |
