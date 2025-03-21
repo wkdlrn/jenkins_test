@@ -1,7 +1,7 @@
 # This config was automatically generated from your source code
 # Stacks detected: cicd:jenkins:.,deps:java:.,tool:gradle:
 version: 2.1
-jobs:
+jobs: # 함수같은거 만들었다고 생각
   test-java:
     docker:
       - image: cimg/openjdk:17.0
@@ -18,3 +18,8 @@ jobs:
           root:
           pats:
             - build/libs/*.jar
+workflow: # 함수 실행
+  version: 2
+  build-and-deploy:
+    jobs:
+      - gradle-build
